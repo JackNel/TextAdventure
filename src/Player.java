@@ -10,16 +10,14 @@ public class Player {  // Create a new class, Player, to simplify our code in Ga
 
     void chooseName() {  // Create a method to choose the name
         System.out.println("What is your name, traveler?");
-        Scanner scanner = new Scanner(System.in);  // Scanner object is built into Java and lets it read the user's text input
-        name = scanner.nextLine();
+        name = Game.nextLine();
         System.out.println("Good luck, " + name);
     }
 
     void chooseWeapon() throws Exception {  // Create a method to choose the weapon
         System.out.println("[1] Pick up the sword");
         System.out.println("[2] Pick up the mallet");
-        Scanner scanner = new Scanner(System.in);
-        weapon = scanner.nextLine();
+        weapon = Game.nextLine();
         int weaponNum = Integer.valueOf(weapon);
         if (weaponNum == 1) {
             System.out.println("That's a fine sword!");
@@ -33,8 +31,7 @@ public class Player {  // Create a new class, Player, to simplify our code in Ga
      void chooseArea() throws Exception {
         System.out.println("[1] Enter the forest");
         System.out.println("[2] Enter the underground tunnel");
-        Scanner scanner = new Scanner(System.in);
-        area = scanner.nextLine();
+        area = Game.nextLine();
         int areaNum = Integer.valueOf(area);
         if (areaNum == 1) {
             System.out.println("Entering the forest...");
