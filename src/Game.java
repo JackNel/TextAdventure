@@ -7,10 +7,12 @@ public class Game {
     public static void run() throws Exception {
         System.out.println("Welcome to my text adventure!");
 
+    while (true) {
         Player player = new Player();
         player.chooseName();
         player.chooseWeapon();
         player.chooseArea();
+    }
     }
 
     static String nextLine() {  // Static method that will tell the program to interpet commands
@@ -20,6 +22,8 @@ public class Game {
             if (s.equals("/help")) {
                 System.out.println("These are the available commands:");
                 System.out.println("/help => List available commands.");
+            } else if (s.equals("/exit")) {
+                System.exit(0);
             }
             return nextLine();
         } else {
