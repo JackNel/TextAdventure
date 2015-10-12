@@ -8,7 +8,7 @@ public class Game {
 
     public static void main(String[] args) throws Exception {
         System.out.println("Welcome to my text adventure!");
-        player = new Player();
+       player = new Player();
 
         while (true) {
             player.chooseName();
