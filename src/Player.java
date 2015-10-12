@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.ArrayList;
 
 /**
  * Created by Jack on 10/9/15.
@@ -7,6 +7,7 @@ public class Player {  // Create a new class, Player, to simplify our code in Ga
     String name;
     String weapon;
     String area;
+    ArrayList items = new ArrayList();
 
     void chooseName() {  // Create a method to choose the name
         System.out.println("What is your name, traveler?");
@@ -39,6 +40,15 @@ public class Player {  // Create a new class, Player, to simplify our code in Ga
             System.out.println("Entering the tunnel");
         } else {
             throw new Exception("Invalid area.");
+        }
+    }
+
+    void findItem(String item) {
+        System.out.println("Found Item! Pick it up? [y/n]");
+        String s = Game.nextLine();
+        if (s.equals("y")) {
+            System.out.println("You found a " + item);
+            items.add(item);
         }
     }
 

@@ -4,18 +4,21 @@ import java.util.Scanner;
  * Created by Jack on 10/8/15.
  */
 public class Game {
-    public static void run() throws Exception {
+    static Player player;
+
+    public static void main(String[] args) throws Exception {
         System.out.println("Welcome to my text adventure!");
+        player = new Player();
 
-    while (true) {
-        Player player = new Player();
-        player.chooseName();
-        player.chooseWeapon();
-        player.chooseArea();
-    }
+        while (true) {
+            player.chooseName();
+            player.chooseWeapon();
+            player.chooseArea();
+            player.findItem("Shield");
+        }
     }
 
-    static String nextLine() {  // Static method that will tell the program to interpet commands
+    static String nextLine() {  // Static method that will tell the program to interpret commands
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine();
         if (s.startsWith("/")) {
@@ -24,6 +27,13 @@ public class Game {
                 System.out.println("/help => List available commands.");
             } else if (s.equals("/exit")) {
                 System.exit(0);
+            } else if (s.equals("/inv")) {
+                if (player.items.size() == 0) {
+                    System.out.println("You have no items.");
+                }
+                for (Object item : player.items) {
+                    System.out.println(item);
+                }
             }
             return nextLine();
         } else {
