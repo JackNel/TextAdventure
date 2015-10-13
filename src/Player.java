@@ -3,16 +3,20 @@ import java.util.ArrayList;
 /**
  * Created by Jack on 10/9/15.
  */
-public class Player {  // Create a new class, Player, to simplify our code in Game.java
-    String name;
+public class Player extends Character {  // Create a new class, Player, to simplify our code in Game.java
     String weapon;
     String area;
     ArrayList items = new ArrayList();
 
+    public Player() {
+        health = 100;
+        damage = 20;
+    }
+
     void chooseName() {  // Create a method to choose the name
         System.out.println("What is your name, traveler?");
         name = Game.nextLine();
-        System.out.println("Good luck, " + name);
+        System.out.println(String.format("Good luck, %s", name));
     }
 
     void chooseWeapon() throws Exception {  // Create a method to choose the weapon
@@ -47,9 +51,8 @@ public class Player {  // Create a new class, Player, to simplify our code in Ga
         System.out.println("Found Item! Pick it up? [y/n]");
         String s = Game.nextLine();
         if (s.equals("y")) {
-            System.out.println("You found a " + item);
+            System.out.println(String.format("You found a %s", item));
             items.add(item);
         }
     }
-
-}
+}//end class Player

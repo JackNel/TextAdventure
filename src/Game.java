@@ -10,12 +10,15 @@ public class Game {
         System.out.println("Welcome to my text adventure!");
        player = new Player();
 
-        while (true) {
-            player.chooseName();
-            player.chooseWeapon();
-            player.chooseArea();
-            player.findItem("Shield");
-        }
+
+        player.chooseName();
+        player.chooseWeapon();
+        player.chooseArea();
+        player.findItem("Shield");
+
+        Enemy ogre = new Enemy("Ogre", 50, 5);
+        player.battle(ogre);
+
     }
 
     static String nextLine() {  // Static method that will tell the program to interpret commands
