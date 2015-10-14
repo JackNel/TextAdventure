@@ -4,7 +4,6 @@ import java.util.ArrayList;
  * Created by Jack on 10/9/15.
  */
 public class Player extends Character {  // Create a new class, Player, to simplify our code in Game.java
-    String weapon;
     String area;
     ArrayList items = new ArrayList();
 
@@ -22,15 +21,19 @@ public class Player extends Character {  // Create a new class, Player, to simpl
     void chooseWeapon() throws Exception {  // Create a method to choose the weapon
         System.out.println("[1] Pick up the sword");
         System.out.println("[2] Pick up the mallet");
-        weapon = Game.nextLine();
-        int weaponNum = Integer.valueOf(weapon);
+        int weaponNum = Integer.valueOf(Game.nextLine());
         if (weaponNum == 1) {
-            System.out.println("That's a fine sword!");
+            weapon = new Weapon();
+            weapon.name = "Sword";
+            weapon.damage = 10;
         } else if (weaponNum == 2) {
-            System.out.println("That's a heavy mallet!");
+            weapon = new Weapon();
+            weapon.name = "Mallet";
+            weapon.damage = 10;
         } else {
             throw new Exception("Invalid Weapon.");  // Exception is a built in class in Java
         }
+        System.out.println(String.format("That's a fine %s!", weapon.name.toLowerCase()));
     }
 
      void chooseArea() throws Exception {
