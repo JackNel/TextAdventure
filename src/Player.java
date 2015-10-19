@@ -5,7 +5,7 @@ import java.util.ArrayList;
  */
 public class Player extends Character {  // Create a new class, Player, to simplify our code in Game.java
     String area;
-    ArrayList items = new ArrayList();
+    ArrayList<String> items = new ArrayList();
 
     public Player() {
         health = 100;

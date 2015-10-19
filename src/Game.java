@@ -22,8 +22,9 @@ public class Game {
        player.chooseName();
        player.chooseWeapon();
        player.chooseArea();
-       player.findItem("Shield");
        }
+        player.findItem("Shield");
+        player.findItem("Boots");
 
        Weapon ogreWeapon = new Weapon();
        ogreWeapon.name = "Club";
